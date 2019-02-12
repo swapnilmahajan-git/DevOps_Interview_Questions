@@ -1,0 +1,106 @@
+config first time
+git config --global user.name "swapnil"
+git config --global user.email "swap@gmail.com"
+
+git pull
+git stash
+git stash pop
+git status
+git add 
+git commit -m 
+git commit -am 
+git push
+
+git diff filename
+git diff --staged filename
+
+
+git init
+git remote add <repo-name> <remote-repo-url>
+git push <repo-name>
+git push --set-upstream origin master
+
+log command 
+
+git log --author "name" -> it shows all info about author commit-id,name,email,date,time,commit-msg,
+git log --grep "commit msg" -> it show info using commit msg only specific info
+git log --oneline  -> it shows only commit msg and id
+git log --follow "filename" -> it shows info regarding a giving filnname
+git log -n2 -----> it shows last two comits
+git log -n2 --author "name" --->if you want to combine one or more command in one command
+git log --since 03/02/2019
+git log --until 2019-03-02 
+
+
+
+
+       .   git-daemon(1) to allow anonymous download from repository.
+
+       ·   git-shell(1) can be used as a restricted login shell for shared central repository users.
+
+       ·   git-http-backend(1) provides a server side implementation of Git-over-HTTP ("Smart http") allowing both fetch and push services.
+
+       ·   gitweb(1) provides a web front-end to Git repositories, which can be set-up using the git-instaweb(1) script.
+
+git show <sha-value> --> it show full information with content of the file
+git diff-tree --no-commit-id --name-only -r <SHA-VALUE> --> this command shows the filenames
+
+git reset --mixed HEAD~1 --> It will move from .git to source area
+git reset --soft HEAD~1 --> It will move from .git to stage area
+git reset --> it will move from stage area to source area
+git reset --hard HEAD~1 --> It will delete from every where
+git checkout <file-name> --> if existing file is modified then you can apply git checkout on modified file it will move from source 
+
+git clone -b <branch-name> --single-branch <git-repo-url> --> It will clone particular branch
+git ls-tree --> it will show all files with commit
+
+
+git cherry-pick <sha-value> --> it will merge specific commit from another branch into HEAD branch using sha-value
+
+git tag <tag-name>
+git push --tags
+
+
+git config --global alias.co checkout
+
+[alias]
+	co = checkout
+	br = branch
+	......
+
+git gc is literally telling Git to clean up the mess it's made in the current repository.
+
+.git/ 
+    - config
+    - HEAD
+    - hooks/
+    - info/ 
+    - objects/
+    
+git init --bare ---> it is created without working directory
+
+
+After locking branch ---compare and pull request will be generate --- create pull request --- mrge pull request 
+
+# if we want to back ur delete commit 
+git log --diff-filter=D --summary 
+git checkout $commit <SHA-VALUE>~1 filename --> file will present in ur stage area
+git status
+
+#git commit Structure
+	commit-id
+	user/email
+	commit-msg
+	Time-stamp
+
+#store git credential
+	$ git config credential.helper store 
+
+
+
+
+
+ 
+
+
+

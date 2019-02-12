@@ -1,0 +1,12 @@
+Q.) chef lint
+Q.) chef inspec
+Q.) Suppose you have 10th build, but I want output of only 10th build using groovy script
+Q.) How to make and access jenkins variable globally
+Q.) Write one normal docker file (from ubuntu). -done
+Q.) Write Dockerfile for maven,jdk,tomcat,git,openssh-server. -done
+Q.) write all linux commands -done
+Q.) Write all GIT command  - done
+Q.) write script for creating multiple environment using dockerfile.--done 
+Q.) how to check which PORT no is available? -done
+ ==> sudo lsof(list of open file) -i -P -n | grep LISTEN
+ 

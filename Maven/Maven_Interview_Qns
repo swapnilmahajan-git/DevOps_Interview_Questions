@@ -1,0 +1,156 @@
+﻿INTERVIEW QUESTION:
+=====================
+1.) What are the differences between ANT and Maven.
+
+	- Refer antVsmaven difference file.
+
+2.) How do you create a jar/war file in Maven?
+	
+	- mvn install
+
+3.)What is the  difference between mvn deploy and install?
+	
+	- mvn install 
+		- mvn install command is used for compiles the code.
+		- copy built artifacts i.e jar/war file into local repository $USER_HOME/.m2
+	- mvn deploy
+		- copy built artifacts i.e jar/war file into remote repository like nexus.
+
+4.)Can you explain Maven's lifecycle? [Give one line explanation about each phase during your interview]
+		- validate :- validate project's structure		
+		- init :- prepares project with initial pre-requisites ex: setting properties, creating necessary directory structure..etc.
+		- compile :- compiles "main" java code.
+		- test-compile :- compiles "test" java code
+		- test :- Runs the test cases and generates test reports.
+		- package :- creates jar/war.
+		- install :- copy jar/war from target to .m2 repository
+	
+
+5.)What is Maven? Why we use Maven?
+	
+	-Maven
+	    - Maven is a build tool used to build deployable artifacts from source code.
+
+	-Why we use Maven
+	     1.)When you use Maven, you describe your project using a well-defined project object model(ie.POM.xml)
+	     2.)Maven has a a set of standards, a project lifecycle, a dependency management system.
+	     3.)Maven can apply cross-cutting logic from a set of shared (or custom) plugins.
+
+6.)While building the project, you get an error saying some jar file is missing. how do you add that?
+	
+	- we can add dependency in POM.xml file.
+
+7.)What is groupId, artifactId, and Version in Maven?
+
+	- groupId- this is package name.
+	- artifactId- this is project name.
+	- Version- this is project version.
+
+8.)What are the Maven co-ordinates?
+	
+	-groupId, artifactId, and Version these are Maven co-ordinates. 
+	
+9.)What are the mandatory attributes in pom.xml?
+
+	- groupId, artifactId, and Version these are mandatory attributes in pom.xml
+
+10.)What is the difference between 1.0-SNAPSHOT(SNAPSHOT) version and 1.0-RELEASE(RELEASE) version.
+
+	- In case of Version, if Maven once downloaded the mentioned version say data-service:1.0, it will never try to download a newer 1.0 available in repository. 
+	  To download the updated code, data service version is be upgraded to 1.1.
+
+	 - In case of SNAPSHOT, Maven will automatically fetch the latest SNAPSHOT (data-service:1.0-SNAPSHOT) everytime app-ui team build their project.
+
+
+11.)What is the default naming convention of an artifacts(jar/war) in Maven?
+
+	- artifactId-version.jar/war (FOR EX. gamutkart-1.1-SNAPSHOT.war)
+
+
+12.)How do you generate a site in Maven?
+
+	-  mvn site	
+
+13.)How do you run a clean build in Maven?
+	
+	- mvn clean
+
+14.)how do you add a dependency in Maven pom.xml?
+	
+	1.) go to pom.xml file
+	2.) go to dependencies tag and add dependency in dependencies tag
+	
+	
+14.)what is a plugin?
+
+	- a plugin execution framework where every task is actually done by plugins.
+	- A plugin generally provides a set of goals, which can be executed using the following syntax −
+
+		-$ mvn [plugin-name]:[goal-name] (Ex. mvn compiler:compile)
+
+15.)What is the default path of artifacts in local repository?
+
+	- $USER_HOME/.m2/repository/groupId/artifactId/version/jar_war_file_name
+
+
+16.)Where maven stores the built artifacts? 
+
+	- $USER_HOME/.m2/repository/groupId/artifactId/version
+
+	
+17.)How do you create a project in the Maven?
+	
+	-Two ways we can create a maven project
+	    1.) Web-App
+		$ mvn archetype:generate -DgroupId=com.flipkart -DartifactId=flipkart -Dversion=1.0-SNAPSHOT -DinteractiveMode=false -DarchetypeArtifactId=maven-archetype-webapp
+	    2.) Standalone
+		$ mvn archetype:generate -DgroupId=com.flipkart -DartifactId=flipkart -Dversion=1.0-SNAPSHOT -DinteractiveMode=false
+	
+
+18.)What are the different binary repositoris we have? Which one you are using for your project?
+
+	- Central
+	- Private/Remote (Nexus/atifactrory)
+	- Local (.m2)
+
+
+19.)How do you customize the name of your artifact(jar/war) in Maven?
+				OR
+    How do you change the name of built jar/war file in maven? what changes you need to do in pom.xml file?
+
+	- 1.) go to pom.xml file.
+	  2.) give some required name in build tag, see below example:
+		<build>
+			<finalName>gamutkart</finalName>
+		</build>
+	  (note:- Only in target folder nameing convention is change not in .m2 folder)
+
+
+20.)What do you mean by transitive dependency in Maven and can you explain how maven resolves it?
+
+	- What do you mean by transitive dependency
+		- Transitive dependency means to avoid needing to discover and specify the libraries that your own dependencies require, and including them automatically.
+	
+	- can you explain how maven resolves it
+		It means to directly specify the versions of artifacts(project-name) to be used when they are encountered in transitive dependencies. 
+		For an example project C can include project B artifac15.)What is the default path of artifacts in local repository?ts as a dependency in its dependency Management section and directly control which version of B is to be used.
+
+	
+21.)What is the significance/importance of scope parameter in dependency section?
+
+	- The <scope> element can take 6 values: compile, provided, runtime, test, system and import.
+	- This scope is used to limit the transitivity of a dependency, and also to affect the classpath used for various build tasks.
+
+	
+22.)What are the different scope's we have in Maven?
+	
+	-The <scope> element can take 6 values: 
+		- compile, 
+		- provided, 
+		- runtime, 
+		- test, 
+		- system, 
+		- import.
+
+
+
